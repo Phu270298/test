@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <link rel="stylesheet" href="../css/app.min.css">
+  <link rel="stylesheet" href="../css/reservation-screen.min.css">
+  <link rel="stylesheet" href="../css/header.min.css">
+  <link rel="stylesheet" href="../css/modal-common.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"
+    async>
+  <title>現地予約受付</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="12.333 15.274 20 14">
+        <path d="M12.333 29.274v-2h12.501v2h-12.5Zm0-6v-2h20v2h-20Zm0-6v-2h20v2h-20Z" fill="#fff" fill-rule="evenodd"
+          data-name="Menu" />
+      </svg>
+    </div>
+    <div class="header__content">
+      <div class="header__brand-name">東京湾クルージング</div>
+      <div class="header__right">
+        <div class="header__refresh-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18.3" height="15.466" viewBox="1007.692 14.767 18.3 15.466">
+            <g data-name="refresh">
+              <path
+                d="M1013.124 23.592a.45.45 0 0 0-.34-.746h-1.157a5.233 5.233 0 0 1 5.215-5.573c1.386 0 2.646.542 3.583 1.424l1.63-1.908a7.677 7.677 0 0 0-5.212-2.022 7.682 7.682 0 0 0-5.468 2.265 7.682 7.682 0 0 0-2.257 5.814h-.975a.45.45 0 0 0-.339.746l2.198 2.521.462.53 1.657-1.902 1.003-1.149Z"
+                fill="#fff" fill-rule="evenodd" data-name="パス 37" />
+              <path
+                d="m1025.881 22.121-1.64-1.88-1.02-1.17-1.456 1.67-1.203 1.38a.45.45 0 0 0 .339.746h1.155a5.234 5.234 0 0 1-5.213 4.86 5.2 5.2 0 0 1-3.2-1.097l-1.631 1.909a7.674 7.674 0 0 0 4.83 1.694 7.682 7.682 0 0 0 5.468-2.265 7.677 7.677 0 0 0 2.257-5.1h.975a.45.45 0 0 0 .34-.747Z"
+                fill="#fff" fill-rule="evenodd" data-name="パス 38" />
+            </g>
+          </svg>
+          更新
+        </div>
+        <div class="header__date">
+          最終更新：2022/08/01 12:45
+        </div>
+        <div class="header__profile">
+          <div class="header__profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13.043" height="15" viewBox="161.382 171.171 13.043 15">
+              <g data-name="グループ 2">
+                <path
+                  d="M171.527 174.72c0 1.96-1.622 3.549-3.623 3.549-2.002 0-3.623-1.589-3.623-3.549s1.621-3.549 3.623-3.549c2 0 3.623 1.589 3.623 3.549Z"
+                  fill="#fff" fill-rule="evenodd" data-name="パス 3" />
+                <path
+                  d="M173.081 181.373c-.74-.579-1.82-1.186-3.31-1.525h-3.734c-1.49.339-2.572.946-3.31 1.525a3.493 3.493 0 0 0-1.345 2.753v2.045h13.043v-2.045c0-1.07-.49-2.085-1.344-2.753Z"
+                  fill="#fff" fill-rule="evenodd" data-name="パス 4" />
+              </g>
+            </svg>
+          </div>
+          <span>
+            管理者
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reservation-container">
+    <div class="d-flex tab-list justify-content-between">
+      <div class="tab-list__btn-arrow back-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+          <path d="m8 0 1.455 1.455L3.948 6.96H16v2.078H3.948l5.507 5.506L8 16 0 8l8-8Z" fill="#004bb1"
+            fill-rule="evenodd" data-name="パス 10" />
+        </svg>
+      </div>
+      <div class="tab-list__time selected">
+        11:00
+      </div>
+      <div class="tab-list__time">
+        11:30
+      </div>
+      <div class="tab-list__time">
+        13:00
+      </div>
+      <div class="tab-list__time">
+        13:15
+      </div>
+      <div class="tab-list__time">
+        14:30
+      </div>
+      <div class="tab-list__btn-arrow next-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+          <path d="M8 0 6.545 1.455l5.507 5.506H0v2.078h12.052l-5.507 5.506L8 16l8-8-8-8Z" fill="#004bb1"
+            fill-rule="evenodd" data-name="パス 10" />
+        </svg>
+      </div>
+    </div>
+    <!-- start filter box -->
+    <div class="filter-box">
+      <div class="d-flex align-items-center justify-content-between">
+        <span class="filter-box__datetime">2022/08/01(月)　11:30～13:00　神田川クルーズ90分コース</span>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex filter-box__input-group mr-5">
+            <div class="filter-box__label">残数</div>
+            <input class="w-55 input-dark-blue text-center" type="text" value="3.5">
+          </div>
+          <div class="d-flex filter-box__input-group mr-5">
+            <div class="filter-box__label">参加数</div>
+            <input class="w-55 input-dark-blue text-center" type="text" value="3.5">
+          </div>
+          <button class="filter-box__medium-btn bg-gray">
+            受付停止
+          </button>
+          <button class="filter-box__medium-btn bg-gray">
+            返金設定
+          </button>
+          <button class="filter-box__large-btn dark-blue">
+            催行中にする
+          </button>
+        </div>
+      </div>
+      <div class="mt-5 d-flex align-items-center justify-content-between">
+        <span class="filter-box__code">KND090-20220801-1130</span>
+        <div class="d-flex align-items-center justify-content-between">
+          <button class="filter-box__medium-btn dark-blue">
+            新規予約
+          </button>
+          <button class="filter-box__medium-btn dark-blue">
+            変更
+          </button>
+          <input class="filter-box__input-group filter-box__input-dark ml-10" type="text" value="反時計回り">
+          <div class="d-flex filter-box__input-group mr-5 ml-5 w-110">
+            <div class="filter-box__label">船名</div>
+            <input class="w-60 text-left pl-7" type="text" value="NANO1">
+          </div>
+          <div class="d-flex filter-box__input-group mr-5 w-110">
+            <div class="filter-box__label">船長
+            </div>
+            <input class="w-60 text-left pl-7" type="text" value="中山">
+          </div>
+          <div class="d-flex filter-box__input-group mr-5 w-110">
+            <div class="filter-box__label">船員
+            </div>
+            <input class="w-60 text-left pl-7" type="text" value="多田">
+          </div>
+          <div class="d-flex filter-box__input-group w-110 mr-0">
+            <div class="filter-box__label">ガイド</div>
+            <input class="w-60 text-left pl-7" type="text" value="稲垣">
+          </div>
+          <button class="filter-box__large-btn dark-red">
+            催行中止にする
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end fillter box -->
+    <!-- table -->
+    <div class="resevation-table">
+      <table class="table">
+        <thead class="table__thead">
+          <tr class="table__tr table__tr-head">
+            <th scope="col" class="table__th table__th-number">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="checkall" class="checkbox" type="checkbox">
+                <label for="checkall" class="custom-checkbox"></label>
+                <label for="checkall" class="table__number">番号</label>
+              </div>
+            </th>
+            <th scope="col" class="table__th"><span>代表者カナ</span></th>
+            <th scope="col" class="table__th">Checkin</th>
+            <th scope="col" class="table__th w-125">再集合</th>
+            <th scope="col" class="table__th w-195">人数 (大人･小･幼席有･幼席無)</th>
+            <th scope="col" class="table__th">電話番号</th>
+            <th scope="col" class="table__th table__th-price">金額</th>
+            <th scope="col" class="table__th">精算状況</th>
+            <th scope="col" class="table__th">CXL</th>
+            <th scope="col" class="table__th w-85">備考</th>
+          </tr>
+        </thead>
+        <tbody class="table__tbody">
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-1" class="checkbox" type="checkbox" checked>
+                <label for="table-number-1" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-1" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-2" class="checkbox" type="checkbox" checked>
+                <label for="table-number-2" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-2" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-3" class="checkbox" type="checkbox" checked>
+                <label for="table-number-3" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-3" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-red">未精算</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-4" class="checkbox" type="checkbox" checked>
+                <label for="table-number-4" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-4" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-5" class="checkbox" type="checkbox" checked>
+                <label for="table-number-5" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-5" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-6" class="checkbox" type="checkbox" checked>
+                <label for="table-number-6" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-6" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-7" class="checkbox" type="checkbox" checked>
+                <label for="table-number-7" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-7" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-8" class="checkbox" type="checkbox" checked>
+                <label for="table-number-8" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-8" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-9" class="checkbox" type="checkbox" checked>
+                <label for="table-number-9" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-9" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">13</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- table item -->
+          <tr class="table__tr">
+            <td class="text-center table__td" scope="col">
+              <div class="d-flex align-items-center justify-content-center">
+                <input id="table-number-10" class="checkbox" type="checkbox" checked>
+                <label for="table-number-10" for="checkall" class="custom-checkbox"></label>
+                <label for="table-number-10" class="table__number">001</label>
+              </div>
+            </td>
+            <td scope="col" class="table__td"><a href="#" class="table__td -username">ヤマダ　タロウ</a></td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">済</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-large btn-red">未</button>
+                <div class="table__input-number-box">
+                  <input value="0">
+                  <div class="table__number-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 7.1 8 5">
+                      <path d="m50 7.1 4 3.852-1.191 1.148L50 9.395 47.191 12.1 46 10.952 50 7.1Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="46 17.999 8 5">
+                      <path d="m50 23-4-3.853 1.191-1.148L50 20.704l2.809-2.705L54 19.147l-4 3.852Z" fill="#98a6b5"
+                        fill-rule="evenodd" data-name="パス 36" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td scope="col" class="table__td">
+              <div class="d-flex align-items-center justify-content-end pr-5">
+                <div class="table__total-person">4</div>
+                <div class="d-flex table__multiple-input">
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                  <div class="table__input-dash"></div>
+                  <input type="text" value="0" />
+                </div>
+              </div>
+            </td>
+            <td class="table__td -phone-number" scope="col">
+              090-1234-5678
+            </td>
+            <td class="table__td -price" scope="col">101,500円
+            </td>
+            <td scope="col" class="table__td"><button class="btn-large dark-blue">精算済</button></td>
+            <td scope="col" class="table__td"><button class="btn-medium bg-gray">CXL</button></td>
+            <td scope="col" class="table__td">
+              <div class="d-flex">
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17.996" viewBox="6 6 18 17.996">
+                    <g data-name="Line">
+                      <path
+                        d="M22.957 19.185c.9-1.697 1.23-3.64.94-5.54a9 9 0 1 0-10.251 10.253c.447.065.898.097 1.35.098a8.91 8.91 0 0 0 4.18-1.04l2.414.647a1.636 1.636 0 0 0 1.588-.425 1.636 1.636 0 0 0 .425-1.58l-.646-2.413Zm-1.588-.515a.818.818 0 0 0-.081.621l.736 2.733-2.733-.736a.818.818 0 0 0-.622.082 7.282 7.282 0 0 1-4.786.908 7.364 7.364 0 0 1 1.113-14.646c.22-.012.442-.012.662 0a7.364 7.364 0 0 1 5.728 11.005Z"
+                        fill="#fff" fill-rule="evenodd" data-name="パス 13" />
+                      <path d="M9.943 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 3" />
+                      <path d="M13.496 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 4" />
+                      <path d="M17.048 14.896a1.5 1.5 0 1 1 0 .1z" fill="#fff" fill-rule="evenodd" data-name="楕円形 5" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="btn-small bg-gray d-flex justify-content-center align-items-center ml-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.26" viewBox="9.125 4 13 20.26">
+                    <path
+                      d="m11.363 10.818 3.03-2.2c.34-.25.754-.377 1.175-.364a2.473 2.473 0 0 1 2.295 1.72c.176.552.336.924.482 1.118a4.719 4.719 0 0 0 3.78 1.89v1.89a6.605 6.605 0 0 1-5.107-2.408l-.66 3.74 1.949 1.635 2.102 5.774-1.778.647-1.928-5.298-3.205-2.69a1.89 1.89 0 0 1-.674-1.8l.481-2.727-.64.465-2.01 2.768-1.53-1.112 2.222-3.06Zm5.562-3.036a1.89 1.89 0 1 1 0-3.782 1.89 1.89 0 0 1 0 3.782Zm-2.81 12.46-3.038 3.622-1.449-1.215 2.814-3.353.705-2.06 1.693 1.417-.725 1.59Z"
+                      fill="#fff" fill-rule="evenodd" data-name="walking" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- pagination -->
+    <div class="pagination">
+      <div class="d-flex pagination__checkbox">
+        <button class="d-flex align-items-center justify-content-center">フィルター</button>
+        <div class="d-flex align-items-center justify-content-between pagination__checkbox-list">
+          <div class="d-flex align-items-center">
+            <input type="checkbox" class="pagination__input" id="未精算" name="未精算" value="未精算">
+            <label for="未精算" class="custom-checkbox"></label>
+            <label for="未精算"> 未精算</label>
+          </div>
+          <div class="d-flex align-items-center">
+            <input type="checkbox" class="pagination__input" id="Checkin未" name="Checkin未" value="Checkin未">
+            <label for="Checkin未" class="custom-checkbox"></label>
+            <label for="Checkin未"> Checkin未</label>
+          </div>
+          <div class="d-flex align-items-center">
+            <input type="checkbox" class="pagination__input" id="再集合未" name="再集合未" value="再集合未">
+            <label for="再集合未" class="custom-checkbox"></label>
+            <label for="再集合未"> 再集合未</label>
+          </div>
+          <div class="d-flex align-items-center">
+            <input type="checkbox" class="pagination__input" id="CXL除く" name="CXL除く" value="CXL除く">
+            <label for="CXL除く" class="custom-checkbox"></label>
+            <label for="CXL除く"> CXL除く</label>
+          </div>
+          <div class="d-flex align-items-center">
+            <input type="checkbox" class="pagination__input" id="コメント有" name="コメント有" value="コメント有" checked>
+            <label for="コメント有" class="custom-checkbox"></label>
+            <label for="コメント有"> コメント有 </label>
+          </div>
+        </div>
+      </div>
+      <div class="pagination__btn">
+        <button class="pagination__large-btn">
+          QRコード読込
+        </button>
+        <button class="pagination__large-btn ml-10">
+          メモ
+        </button>
+      </div>
+      <div class="pagination__paginate d-flex align-items-center">
+        <button class="mr-10 pagination__btn-paginate d-flex justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="8.588 8 13 13">
+            <g data-name="シンボル 82">
+              <path d="m15.088 8 1.182 1.182-4.474 4.474h9.792v1.688h-9.792l4.474 4.474L15.088 21l-6.5-6.5 6.5-6.5Z"
+                fill="#004bb1" fill-rule="evenodd" data-name="パス 10" />
+            </g>
+          </svg>
+        </button>
+        <div class="d-flex">
+          <button class="pagination__btn-paginate pagination__page d-flex justify-content-center align-items-center">
+            1
+          </button>
+          <button
+            class="pagination__btn-paginate pagination__page dark-blue d-flex justify-content-center align-items-center">
+            2
+          </button>
+          <button class="pagination__btn-paginate pagination__page d-flex justify-content-center align-items-center">
+            3
+          </button>
+        </div>
+
+        <button class="pagination__btn-paginate ml-10 d-flex justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13">
+            <path d="M6.5 0 5.318 1.182l4.474 4.474H0v1.688h9.792l-4.474 4.474L6.5 13 13 6.5 6.5 0Z" fill="#004bb1"
+              fill-rule="evenodd" data-name="パス 10" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal new reservation -->
+  <div class="modal newReservation">
+    <div class="modal__content">
+      <div class="modal__header">
+        新規予約
+      </div>
+      <div class="modal__body newReservation__body">
+        <div class="newReservation__header">
+          <div class="newReservation__remaining">
+            <span class="newReservation__remaining-label">残席数</span>
+            <b class="newReservation__remaining-number">3</b>
+          </div>
+          <div class="newReservation__time">
+            2022/08/01(月)　11:30～13:00 <br>神田川クルーズ90分コース
+          </div>
+        </div>
+        <table class="newReservation__table">
+          <tbody>
+            <tr class="newReservation__tr -deliver">
+              <td class="newReservation__td">
+                <span class="newReservation__name">大人</span>
+                <span class="newReservation__sub-name">（中学生以上）</span>
+                <span class="newReservation__number-student">12</span>
+                <span class="newReservation__student-content">歳以上</span>
+              </td>
+              <td class="newReservation__td -right">
+                <b class="newReservation__price">2,500</b>
+                <span class="newReservation__student-content">円/名</span>
+              </td>
+              <td class="newReservation__td -input-group">
+                <div class="newReservation__input-group">
+                  <div class="newReservation__minus"><img src="../icons/minus.svg" alt="minus"></div>
+                  <div class="newReservation__input"><input value="1"></div>
+                  <div class="newReservation__plus"><img src="../icons/plus.svg" alt="plus"></div>
+                </div>
+              </td>
+            </tr>
+            <tr class="newReservation__tr -deliver">
+              <td class="newReservation__td">
+                <span class="newReservation__name">小学生</span>
+                <span class="newReservation__number-student ml-14">7</span>
+                <span class="newReservation__student-content">歳 ～</span>
+                <span class="newReservation__number-student">11</span>
+                <span class="newReservation__student-content">歳 ～</span>
+              </td>
+              <td class="newReservation__td -right">
+                <b class="newReservation__price">1,250</b>
+                <span class="newReservation__student-content">円/名</span>
+              </td>
+              <td class="newReservation__td -input-group">
+                <div class="newReservation__input-group">
+                  <div class="newReservation__minus"><img src="../icons/minus.svg" alt="minus"></div>
+                  <div class="newReservation__input"><input value="1"></div>
+                  <div class="newReservation__plus"><img src="../icons/plus.svg" alt="plus"></div>
+                </div>
+              </td>
+            </tr>
+            <tr class="newReservation__tr -deliver">
+              <td class="newReservation__td">
+                <span class="newReservation__name">未就学児</span>
+                <span class="newReservation__number-student ml-19">6</span>
+                <span class="newReservation__student-content">歳未満　席あり</span>
+                <br>
+                <div class="newReservation__student-content -right mt-10">席なし（膝上）</div>
+              </td>
+              <td class="newReservation__td -right">
+                <b class="newReservation__price">500</b>
+                <span class="newReservation__student-content">円/名</span>
+                <div class="mt-10">
+                  <b class="newReservation__price">500</b>
+                  <span class="newReservation__student-content">円/名</span>
+                </div>
+              </td>
+              <td class="newReservation__td -input-group">
+                <div class="newReservation__input-group">
+                  <div class="newReservation__minus"><img src="../icons/minus.svg" alt="minus"></div>
+                  <div class="newReservation__input"><input value="1"></div>
+                  <div class="newReservation__plus"><img src="../icons/plus.svg" alt="plus"></div>
+                </div>
+                <div class="newReservation__input-group mt-10">
+                  <div class="newReservation__minus"><img src="../icons/minus.svg" alt="minus"></div>
+                  <div class="newReservation__input"><input value="1"></div>
+                  <div class="newReservation__plus"><img src="../icons/plus.svg" alt="plus"></div>
+                </div>
+              </td>
+            </tr>
+            <tr class="newReservation__tr -deliver">
+              <td class="newReservation__td -red">
+                <span class="newReservation__name">クーポン適用</span>
+              </td>
+              <td class="newReservation__td -red -right">
+                <b class="newReservation__price">-250</b>
+                <span class="newReservation__student-content">円</span>
+              </td>
+              <td class="newReservation__td">
+                <div class="newReservation__input-group -invisible">
+                  <div class="newReservation__minus"><img src="../icons/minus.svg" alt="minus"></div>
+                  <div class="newReservation__input"><input value="1"></div>
+                  <div class="newReservation__plus"><img src="../icons/plus.svg" alt="plus"></div>
+                </div>
+              </td>
+            </tr>
+            <tr class="newReservation__tr">
+              <td class="newReservation__td -right">
+                <span class="newReservation__name">合計</span>
+              </td>
+              <td class="newReservation__td -right">
+                <b class="newReservation__price">4,000</b>
+                <span class="newReservation__student-content">名</span>
+              </td>
+              <td class="newReservation__td">
+                <div class="newReservation__input-group -invisible">
+                  <div class="newReservation__minus"><img src="../icons/minus.svg" alt="minus"></div>
+                  <div class="newReservation__input"><input value="1"></div>
+                  <div class="newReservation__plus"><img src="../icons/plus.svg" alt="plus"></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="newReservation__terms">
+          <input type="checkbox" class="newReservation__checkbox" id="terms">
+          <label for="terms" class="custom-checkbox"></label>
+          <label for="terms" class="newReservation__student-content ml-8">人数の確認を行いました。</label>
+          <button class="newReservation__save-btn">新規予約</button>
+        </div>
+        <div class="newReservation__close modal-close-btn">
+          <button class="newReservation__close-btn">
+            <img src="../icons/close.svg" alt="close">
+            <span class="ml-10">閉じる</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal new reservation -->
+
+  <!-- Modal calculate -->
+  <div class="modal calculate">
+    <div class="modal__content">
+      <div class="modal__header">
+        精算
+      </div>
+      <div class="modal__body calculate__body">
+        <div>現在の予約内容</div>
+        <div class="calculate__content">
+          <div class="calculate__separate">
+            <div class="calculate__description">11:30～13:00
+              神田川クルーズ90分コース
+              ヤマダ　タロウ
+              090-1234-5678
+            </div>
+          </div>
+          <div class="calculate__separate">
+            <table class="calculate__table">
+              <tbody>
+                <tr class="calculate__tr">
+                  <td class="calculate__td">
+                    大人（中学生以上）12歳以上
+                  </td>
+                  <td class="calculate__td">
+                    5
+                  </td>
+                </tr>
+                <tr class="calculate__tr">
+                  <td class="calculate__td">
+                    小学生大人　7歳〜11歳
+                  </td>
+                  <td class="calculate__td">
+                    5
+                  </td>
+                </tr>
+                <tr class="calculate__tr">
+                  <td class="calculate__td">
+                    未就学児　6歳未満　席あり
+                  </td>
+                  <td class="calculate__td">
+                    5
+                  </td>
+                </tr>
+                <tr class="calculate__tr">
+                  <td class="calculate__td -right">
+                    席なし（膝上）
+                  </td>
+                  <td class="calculate__td">
+                    5
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="calculate__number-box mt-45">
+          <input type="checkbox" checked class="calculate__checkbox" id="calculate_checkbox1">
+          <label for="calculate_checkbox1" class="custom-checkbox"></label>
+          <label class="calculate__number-label pl-14">割引</label>
+          <input type="text" class="calculate__input" value="1,000">
+          <span>円</span>
+          <div class="calculate__input-action">
+            <div class="calculate__minus"><img src="../icons/minus.svg" alt="minus"></div>
+            <div class="calculate__plus"><img src="../icons/plus.svg" alt="plus"></div>
+          </div>
+        </div>
+        <div class="calculate__number-box mt-10">
+          <label class="calculate__number-label pl-18">返金額</label>
+          <input type="text" class="calculate__input" value="1,000">
+          <span>円</span>
+          <div class="calculate__result">
+            <div class="calculate__result-label">未精算額</div>
+            <div class="calculate__result-number">4,000</div>
+            <div class="calculate__result-unit">円</div>
+          </div>
+        </div>
+        <div class="calculate__radio">
+          <label class="calculate__radio-label">
+            <input type="radio" name="type" class="calculate__radio-input" checked>
+            <span class="calculate__radio-mark"></span>
+            現金
+          </label>
+          <label class="calculate__radio-label">
+            <input type="radio" name="type" class="calculate__radio-input">
+            <span class="calculate__radio-mark"></span>
+            電子決済
+          </label>
+          <label class="calculate__radio-label">
+            <input type="radio" name="type" class="calculate__radio-input">
+            <span class="calculate__radio-mark"></span>
+            事前決済
+          </label>
+        </div>
+        <div class="calculate__terms">
+          <input type="checkbox" checked class="calculate__checkbox" id="calculate_checkbox2">
+          <label for="calculate_checkbox2" class="custom-checkbox"></label>
+          <label for="calculate_checkbox2" class="calculate__number-label -small pl-14">確認を行いました。</label>
+          <button class="calculate__terms-btn btn-print ml-60">領収書印刷済</button>
+          <button class="calculate__terms-btn btn-liquidated ml-10">清算済</button>
+        </div>
+        <div class="calculate__close modal-close-btn">
+          <button class="calculate__close-btn">
+            <img src="../icons/close.svg" alt="close">
+            <span class="ml-10">閉じる</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal calculate -->
+
+  <!-- Modal booking -->
+  <div class="modal booking">
+    <div class="modal__content">
+      <div class="modal__header">
+        新規予約
+      </div>
+      <div class="modal__body booking__body">
+        <div class="booking__title">席の確保が完了しました。</div>
+        <div class="booking__content">
+          <div class="booking__separate">
+            <div class="booking__description">
+              番号 <b>015</b>
+              <hr class="booking__hr">
+              2022/08/01(月)11:30～13:00
+              <br>
+              神田川クルーズ90分コース
+            </div>
+          </div>
+          <div class="booking__separate">
+            <table class="booking__table">
+              <tbody>
+                <tr class="booking__tr">
+                  <td class="booking__td">
+                    大人（中学生以上）12歳以上
+                  </td>
+                  <td class="booking__td">
+                    1
+                  </td>
+                </tr>
+                <tr class="booking__tr">
+                  <td class="booking__td">
+                    小学生大人　7歳〜11歳
+                  </td>
+                  <td class="booking__td">
+                    1
+                  </td>
+                </tr>
+                <tr class="booking__tr">
+                  <td class="booking__td">
+                    未就学児　6歳未満　席あり
+                  </td>
+                  <td class="booking__td">
+                    1
+                  </td>
+                </tr>
+                <tr class="booking__tr">
+                  <td class="booking__td -right">
+                    席なし（膝上）
+                  </td>
+                  <td class="booking__td">
+                    0
+                  </td>
+                </tr>
+                <tr class="booking__tr">
+                  <td class="booking__td -result" colspan="2">
+                    <div class="d-flex align-items-center">
+                      <button class="booking__terms-btn -unpaid">未精算</button>
+                      <span class="booking__result-label">精算額</span>
+                      <b class="booking__result-number">4,000</b>
+                      <div class="booking__result-unit">円</div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>代表者情報</div>
+        <div class="booking__info">
+          名前
+          <input type="text" class="booking__info-name" value="山田　太郎">
+          <input type="text" class="booking__info-name" value="ヤマダ　ジロウ">
+        </div>
+        <div class="booking__phone">
+          <b>TEL</b>
+          <input type="text" class="booking__phone-input">
+          <input type="checkbox" class="booking__checkbox" id="booking_checkbox1">
+          <label for="booking_checkbox1" class="custom-checkbox"></label>
+          <label for="booking_checkbox1" class="booking__phone-label">SMSで予約内容を送付</label>
+        </div>
+        <div class="booking__terms">
+          <input type="checkbox" checked class="booking__checkbox" id="booking_checkbox2">
+          <label for="booking_checkbox2" class="custom-checkbox"></label>
+          <label for="booking_checkbox2" class="booking__number-label -small pl-8">最終確認を行いました。</label>
+          <button class="booking__terms-btn btn-save-booking">予約確定</button>
+        </div>
+        <div class="booking__close modal-close-btn">
+          <button class="booking__close-btn">
+            キャンセルして前画面へ
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal booking -->
+
+  <!-- Modal cancel -->
+  <div class="modal cancel">
+    <div class="modal__content">
+      <div class="modal__header">
+        予約のキャンセル
+      </div>
+      <div class="modal__body cancel__body">
+        <div class="cancel__title">
+          金額
+        </div>
+        <div class="cancel__price">4,000</div>
+        <div class="cancel__unit">円</div>
+        <div class="cancel__setting">
+          <div class="d-flex pl-10">キャンセル料金 <span class="cancel__required">※</span></div>
+          <div class="cancel__input-group">
+            <div class="cancel__input-box">
+              <input type="text" class="cancel__input-price" value="1,000">
+              <span class="cancel__input-unit">円</span>
+            </div>
+            <div class="cancel__input-box">
+              または
+              <input type="text" class="cancel__input-percent">
+              %
+            </div>
+            <button class="cancel__btn -clear">クリア</button>
+          </div>
+        </div>
+        <div class="cancel__setting">
+          <div class="d-flex pl-10">キャンセル料金 <span class="cancel__required">※</span></div>
+          <div class="d-flex align-items-center mt-20 pl-10">
+            <label class="cancel__label">
+              <input type="radio" checked name="cancel_type" class="cancel__radio">
+              <span class="cancel__mark"></span>
+              お客様の都合
+            </label>
+            <label class="cancel__label">
+              <input type="radio" name="cancel_type" class="cancel__radio">
+              <span class="cancel__mark"></span>
+              お客様の都合
+            </label>
+            <label class="cancel__label">
+              <input type="radio" name="cancel_type" class="cancel__radio">
+              <span class="cancel__mark"></span>
+              天候都合
+            </label>
+            <label class="cancel__label">
+              <input type="radio" name="cancel_type" class="cancel__radio">
+              <span class="cancel__mark"></span>
+              その他
+            </label>
+          </div>
+        </div>
+        <div class="cancel__setting pl-10 pr-10">
+          <div class="d-flex">キャンセルメモ</div>
+          <textarea rows="4" class="cancel__textarea"></textarea>
+        </div>
+      </div>
+      <div class="cancel__footer">
+        <div class="cancel__close modal-close-btn">
+          <button class="booking__close-btn">
+            <img src="../icons/close.svg" alt="close">
+            <span class="ml-10">閉じる</span>
+          </button>
+        </div>
+        <div class="cancel__btn -save">
+          予約をキャンセル
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal cancel -->
+
+  <!-- Modal calloff -->
+  <div class="modal calloff">
+    <div class="modal__content">
+      <div class="modal__header">
+        催行中止
+      </div>
+      <div class="modal__body calloff__body">
+        <div class="calloff__title">
+          返金額
+        </div>
+        <div class="calloff__price">100</div>
+        <div class="calloff__unit">%</div>
+        <div class="calloff__setting">
+          <table class="calloff__table">
+            <tbody>
+              <tr>
+                <td class="calloff__td -left"></td>
+                <td class="calloff__td pb-10">
+                  <div class="d-flex align-items-center">
+                    <label class="calloff__label">
+                      <input type="radio" checked name="calloff_type" class="calloff__radio">
+                      <span class="calloff__mark"></span>
+                      メール
+                    </label>
+                    <label class="calloff__label">
+                      <input type="radio" name="calloff_type" class="calloff__radio">
+                      <span class="calloff__mark"></span>
+                      SMS
+                    </label>
+                    <label class="calloff__label">
+                      <input type="radio" name="calloff_type" class="calloff__radio">
+                      <span class="calloff__mark"></span>
+                      メール送付なし
+                    </label>
+                    <label class="calloff__label">
+                      <input type="radio" name="calloff_type" class="calloff__radio">
+                      <span class="calloff__mark"></span>
+                      お客様の設定に従う
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="calloff__td -left"><b>件名</b></td>
+                <td class="calloff__td">
+                  <input type="text" class="calloff__input" value="運航中止のお知らせ">
+                  <textarea type="text" class="calloff__textarea">内容内容内容内容内容内容内容内容内容内容内容内容内容</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td class="calloff__td -left"></td>
+                <td class="calloff__td">
+                  <div class="calloff__hint">文字数65文字</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="calloff__td -left">
+                  <div class="calloff__select-box">
+                    <select class="calloff__select">
+                      <option value="1">定型文</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="calloff__input" value="運航中止のお知らせ">
+                </td>
+              </tr>
+              <tr>
+                <td class="calloff__td -left -bottom">
+                  <button class="calloff__btn -select">選択</button>
+                  <div class="pb-5"></div>
+                </td>
+                <td class="calloff__td">
+                  <textarea type="text" class="calloff__textarea">内容内容内容内容内容内容内容内容内容内容内容内容内容</textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="calloff__footer">
+        <div class="calloff__close modal-close-btn">
+          <button class="booking__close-btn">
+            <img src="../icons/close.svg" alt="close">
+            <span class="ml-10">閉じる</span>
+          </button>
+        </div>
+        <div class="calloff__btn -save">
+          催行中止にする
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal calloff -->
+
+  <!-- Modal detail -->
+  <div class="modal detail">
+    <div class="modal__content">
+      <div class="modal__header">
+        予約詳細
+      </div>
+      <div class="modal__body detail__body">
+        <div class="detail__description">
+          2022/08/01(月)11:30～13:00　神田川クルーズ90分コース <br>
+          KND090-20220807-1130
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">番号</div>
+          <div class="detail__box-right">
+            <span class="pr-50">001</span>
+            <b class="pr-14">団体・会社名</b>
+            <input type="text" class="detail__input -company-name">
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">名前</div>
+          <div class="detail__box-right">
+            <input type="text" class="detail__input -first-name">
+            <input type="text" class="detail__input -last-name">
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">人数</div>
+          <div class="detail__box-right">
+            <input type="text" class="detail__input -number">
+            <span class="detail__slash"></span>
+            大人
+            <input type="text" class="detail__input -number">
+            小学生
+            <input type="text" class="detail__input -number">
+            幼児(席有)
+            <input type="text" class="detail__input -number">
+            幼児(席無)
+            <input type="text" class="detail__input -number">
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">Mail</div>
+          <div class="detail__box-right">
+            <input type="text" class="detail__input">
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">TEL</div>
+          <div class="detail__box-right">
+            <input type="text" class="detail__input">
+            <span class="pl-35 pr-10">住所　〒</span>
+            <input type="text" class="detail__input -post-code">
+            <input type="text" class="detail__input -address">
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">金額</div>
+          <div class="detail__box-right">
+            <input type="text" class="detail__input">
+            <span class="pl-7 pr-26">円</span>
+            <button class="detail__btn -not-actuarial">未精算</button>
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__box-left">備考欄</div>
+          <div class="detail__box-right">
+            <textarea class="detail__textarea"></textarea>
+            <div class="detail__actions">
+              <button class="detail__btn -action">CXL</button>
+              <button class="detail__btn -action"><img src="../icons/walking.svg" alt="walking"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail__footer">
+        <div class="detail__close modal-close-btn">
+          <button class="booking__close-btn">
+            <img src="../icons/close.svg" alt="close">
+            <span class="ml-10">閉じる</span>
+          </button>
+        </div>
+        <div class="detail__btn -save">
+          更新
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal detail -->
+
+  <!-- Modal refund -->
+  <div class="modal refund">
+    <div class="modal__content">
+      <div class="modal__header">
+        返金単価設定
+      </div>
+      <div class="modal__body refund__body">
+        <div class="refund__header">
+          <input id="refund_checkbox1" class="refund__checkbox" type="checkbox">
+          <label for="refund_checkbox1" class="custom-checkbox"></label>
+          <label for="refund_checkbox1" class="refund__checkbox-label">全額返金</label>
+        </div>
+        <div class="refund__box">
+          <div class="refund__name">大人</div>
+          <input type="text" class="refund__input">
+          <div class="refund__unit">円/人</div>
+          <span class="pl-34 pr-7">または</span>
+          <input type="text" class="refund__input -small">
+          <div class="refund__unit">%</div>
+          <button class="refund__btn -clear">クリア</button>
+        </div>
+        <div class="refund__box">
+          <div class="refund__name">小学生</div>
+          <input type="text" class="refund__input">
+          <div class="refund__unit">円/人</div>
+          <span class="pl-34 pr-7">または</span>
+          <input type="text" class="refund__input -small">
+          <div class="refund__unit">%</div>
+          <button class="refund__btn -clear">クリア</button>
+        </div>
+        <div class="refund__box">
+          <div class="refund__name">幼児</div>
+          <input type="text" class="refund__input">
+          <div class="refund__unit">円/人</div>
+          <span class="pl-34 pr-7">または</span>
+          <input type="text" class="refund__input -small">
+          <div class="refund__unit">%</div>
+          <button class="refund__btn -clear">クリア</button>
+        </div>
+        <div class="refund__terms">
+          <input type="checkbox" checked class="refund__checkbox" id="refund_checkbox2">
+          <label for="refund_checkbox2" class="custom-checkbox"></label>
+          <label for="refund_checkbox2" class="refund__checkbox-label -small">確認を行いました。</label>
+          <button class="refund__btn -btn-cancel ml-60">キャンセル</button>
+          <button class="refund__btn -btn-save ml-20">更新</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal refund -->
+
+  <!-- Modal updateB -->
+  <div class="modal updateB">
+    <div class="modal__content">
+      <div class="modal__header">
+        変更
+      </div>
+      <div class="modal__body updateB__body">
+        <div class="updateB__title">変更が完了しました。</div>
+        <div class="pb-13 pt-20">現在の予約内容</div>
+        <div class="updateB__box">
+          <div class="updateB__box-description">
+            12:45～13:30 <br>
+            神田川クルーズ90分コース <br>
+            ヤマダ　タロウ <br>
+            090-1234-8679
+          </div>
+        </div>
+        <div class="updateB__box -right">
+          <table class="updateB__table">
+              <tbody>
+                <tr class="updateB__tr">
+                  <td class="updateB__td">
+                    大人（中学生以上）12歳以上
+                  </td>
+                  <td class="updateB__td">
+                    1
+                  </td>
+                </tr>
+                <tr class="updateB__tr">
+                  <td class="updateB__td">
+                    小学生大人　7歳〜11歳
+                  </td>
+                  <td class="updateB__td">
+                    1
+                  </td>
+                </tr>
+                <tr class="updateB__tr">
+                  <td class="updateB__td">
+                    未就学児　6歳未満　席あり
+                  </td>
+                  <td class="updateB__td">
+                    1
+                  </td>
+                </tr>
+                <tr class="updateB__tr">
+                  <td class="updateB__td -right">
+                    席なし（膝上）
+                  </td>
+                  <td class="updateB__td">
+                    0
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+        <div class="updateB__deliver"></div>
+        <div class="updateB__title -small">変更が完了しました。</div>
+        <div class="updateB__box">
+          <div class="updateB__box-description">
+            <div class="updateB__title -medium">番号 015</div>
+            <div class="updateB__title -xs">14:30～15:40</div>
+            <div class="updateB__title -xs">東京港70分春海コース</div>
+            ヤマダ　タロウ <br>
+            090-1234-8679
+          </div>
+        </div>
+        <div class="updateB__box -right">
+          <table class="updateB__table">
+            <tbody>
+              <tr class="updateB__tr">
+                <td class="updateB__td">
+                  大人（中学生以上）12歳以上
+                </td>
+                <td class="updateB__td">
+                  1
+                </td>
+              </tr>
+              <tr class="updateB__tr">
+                <td class="updateB__td">
+                  小学生大人　7歳〜11歳
+                </td>
+                <td class="updateB__td">
+                  1
+                </td>
+              </tr>
+              <tr class="updateB__tr">
+                <td class="updateB__td">
+                  未就学児　6歳未満　席あり
+                </td>
+                <td class="updateB__td">
+                  1
+                </td>
+              </tr>
+              <tr class="updateB__tr">
+                <td class="updateB__td -right">
+                  席なし（膝上）
+                </td>
+                <td class="updateB__td">
+                  0
+                </td>
+              </tr>
+              <tr class="updateB__tr">
+                <td class="booking__td -result" colspan="2">
+                  <div class="d-flex align-items-center">
+                    <button class="booking__terms-btn -unpaid">未精算</button>
+                    <span class="booking__result-label">精算差額</span>
+                    <b class="booking__result-number">-500</b>
+                    <div class="booking__result-unit">円</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal updateB -->
+
+  <!-- Modal note -->
+  <div class="modal note">
+    <div class="modal__content">
+      <div class="modal__header">
+        変更
+      </div>
+      <div class="modal__body note__body">
+        <textarea class="note__textarea">内容内容内容内容内容内容内容内容内容内容内容内容内容</textarea>
+        <div class="note__action">
+          <button class="note__btn -cancel">キャンセル</button>
+          <button class="note__btn">更新</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal note -->
+
+  <!-- Modal remarks -->
+  <div class="modal remarks">
+    <div class="modal__content">
+      <div class="modal__header">
+        備考
+      </div>
+      <div class="modal__body remarks__body">
+        <div class="remarks__title">ヤマダ　タロウ様</div>
+        <div class="remarks__content">
+          足が不自由でお越しになります。<br>
+          乗船は先頭にてご案内をお願いします。
+        </div>
+        <button class="remarks__btn -close">
+          <img src="../icons/close.svg" alt="close">
+          <span class="ml-10">閉じる</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- End modal remarks -->
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script>
+    var modals = [...document.querySelectorAll('.modal')];
+    window.onclick = function (event) {
+      if (modals.includes(event.target)) $(event.target).hide();
+    }
+    $('.modal-close-btn button').on('click', function () {
+      $(this).closest('.modal').hide();
+    })
+  </script>
+</body>
+
+</html>

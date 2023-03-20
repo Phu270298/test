@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="newreservation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"
+        async>
+    <title>新規予約ダイアログA</title>
+</head>
+
+<body>
+    <div class="new_reservation_screen">
+        <div class="new_reservation_header">新規予約</div>
+        <div class="new_reservation_content">
+            <div class="reservation_content">
+                <div class="remaining_seats">
+                    <div class="seat">
+                        <label class="text_normal">残席数 </label>
+                        <label class="seat_number"> 3 </label>
+                    </div>
+                    <div class="time_place">
+                        <div>2022/08/01(月)　11:30～13:00 </div>
+                        <div>神田川クルーズ90分コース</div>
+                    </div>
+                </div>
+                <div class="adults">
+                    <div>
+                        <label class="user_type">大人</label>
+                        <label class="text_normal"></label>(中学生以上）</label>
+                        <label class="text_bold">12</label>
+                        <label class="text_normal">歳以上</label>
+                    </div>
+                    <div class="money">
+                        <label class="text_bold">2,500</label>
+                        <label class="text_normal">円/名</label>
+                    </div>
+                    <div class="btn_add_less">
+                        <button><img src="images/長方形 3.svg" class="less"> </button>
+                        <label>1</label>
+                        <button> <img src="images/合体 1.svg" class="add"> </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="student">
+                    <div>
+                        <label class="user_type">小学生</label>
+                        <label class="text_bold"> 7 </label>
+                        <label class="text_normal">歳　～</label>
+                        <label class="text_bold"> 11 </label>
+                        <label class="text_normal">歳</label>
+                    </div>
+                    <div class="money">
+                        <label class="text_bold">1,250</label>
+                        <label class="text_normal">円/名</label>
+                    </div>
+                    <div class="btn_add_less">
+                        <button> <img src="images/長方形 3.svg" class="less"> </button>
+                        <label>1</label>
+                        <button> <img src="images/合体 1.svg" class="add"> </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="preschooler">
+                    <div>
+                        <label class="user_type">未就学児</label>
+                        <label class="text_bold">6</label>
+                        <label class="text_normal">歳未満　席あり</label>
+                    </div>
+                    <div class="money">
+                        <label class="text_bold">500</label>
+                        <label class="text_normal">円/名</label>
+                    </div>
+                    <div class="btn_add_less">
+                        <button> <img src="images/長方形 3.svg" class="less"> </button>
+                        <label>1</label>
+                        <button> <img src="images/合体 1.svg" class="add"> </button>
+                    </div>
+                </div>
+                <div class="no_seat">
+                    <div class="text_normal">席なし（膝上）</div>
+                    <div class="money">
+                        <label class="text_bold">0</label>
+                        <label class="text_normal">円/名</label>
+                    </div>
+                    <div class="btn_add_less">
+                        <button> <img src="images/長方形 3.svg" class="less"> </button>
+                        <label>1</label>
+                        <button><img src="images/合体 1.svg" class="add"> </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="coupon">
+                    <div class="text_bold">クーポン適用</div>
+                    <div class="money">
+                        <label class="text_bold">-250</label>
+                        <label class="text_normal">円</label>
+                    </div>
+                </div>
+                <hr>
+                <div class="total">
+                    <div class="text_total">合計</div>
+                    <div class="money">
+                        <label class="total_bold">4,000</label>
+                        <label class="total_normal">円</label>
+                    </div>
+                </div>
+                <div class="confirm_number">
+                    <div class="stay_login">
+                        <input id="table-checkall" type="checkbox" class="checkbox">
+                        <label for="table-checkall" class="span"></label>
+                        <label for="table-checkall" class="stay_login_content">人数の確認を行いました。</label>
+                    </div>
+                    <button type="submit"> 新規予約 </button>
+                </div>
+                <div class="close_up">
+                    <button class="btn_close_up">
+                        <img src="images/パス 746.png" alt="パス 746.png" width="20px" height="20px">
+                        <label>閉じる</label>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

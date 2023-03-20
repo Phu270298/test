@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+}
+html{
+    font-size: 1rem;
+    
+}
+body {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    min-width: 1000px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.new_reservation_screen {
+    width: 68%;
+    max-width: 810px;
+    min-width: 680px;
+    height: 77%;
+    max-height: 630px;
+    min-height: 530px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: auto;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;  
+}
+
+.new_reservation_header {
+    width: 100%;
+    height: 20px;
+    background-color: #004BB1;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.new_reservation_content {
+    width: 100%;
+    height: 94%;
+    max-height: 590px;
+    min-height: 490px;
+    background-color: #FFFFFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.reservation_content {
+    width: 70%;
+    margin: auto;
+    height: 100%;
+}
+
+.remaining_seats {
+    display: flex;
+    padding-top: 4.576% ;
+    margin-bottom: 5%;
+}
+
+.seat {
+    border: 1px solid #CDD6DD;
+    height: 53px;
+    width: 120px;
+    margin-right: 3%;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.seat>label {
+    margin-left: 20px;
+}
+.seat_number{
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.time_place>div {
+    line-height: 30px;
+    color:#3B4043;
+}
+
+.adults,
+.student,
+.preschooler,
+.no_seat,
+.coupon,
+.total {
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+.text_bold,
+.user_type,
+.text_total {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.text_bold{
+    margin:0 6px;
+}
+
+.user_type {
+    padding-right: 12px;
+}
+
+.text_normal {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.coupon {
+    color: #CC0000;
+}
+
+.money {
+    position: absolute;
+    right: 30%;
+}
+
+.confirm_number {
+    width: 100%;
+    height: 7.2%;
+    background-color: #F0F3F5;
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1.7% 0;
+    margin: 23px 0 30px;
+}
+
+.stay_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 26px;
+}
+
+.checkbox{
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-color: #cdd6dd !important;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-right: 10px;
+  
+}
+.span{
+    margin-bottom: 0px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-color: #cdd6dd;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.stay_login_content{
+    font-size: 0.875rem;
+}
+
+.checkbox:checked~.span {
+    background-repeat: no-repeat, repeat;
+    background-image: url('./images/Checkbox.svg');
+    background-position: center;
+}
+.confirm_number>button {
+    width: 125px;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #004BB1;
+    border-radius: 4px;
+}
+
+hr {
+    margin: 1.86% 0;
+}
+
+.btn_add_less {
+    width: 130px;
+    height: 26px;
+    border: 2px solid #F0F3F5;
+    border-radius: 10px;
+    background-color: #fafafa;
+    display: flex;
+
+}
+
+.btn_add_less>button {
+    border: none;
+    background-color: #fafafa;
+    width: 50px;
+    height: 26px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.less {
+    margin-bottom: 2px;
+}
+.add{
+    margin-top: 4px;
+}
+
+.btn_add_less>label {
+    width: 32px;
+    height: 26px;
+    color: #3B4043;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid #F0F3F5;
+    border-right: 2px solid #F0F3F5;
+
+}
+
+.close_up {
+    display: flex;
+    justify-content: center;
+}
+
+.btn_close_up {
+    background-color: #707f89;
+    color: #FFFFFF;
+    height: 40px;
+    width: 125px;
+    display: flex;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+
+.btn_close_up>img {
+    padding: 9px 10px 9px 20px;
+}
+
+.btn_close_up>label {
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.preschooler {
+    margin-bottom: 10px;
+}
+
+.no_seat {
+    padding-left: 155px;
+}
+
+.text_total {
+    padding-left: 170px;
+    font-size: 1.5rem;
+}
+.total_bold{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+.total_normal{
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+@media screen and (max-height:780px ) {
+    html{
+        font-size: 0.938rem;
+    }
+    .confirm_number{
+        margin: 20px 0;
+    }
+    hr{
+        margin: 10px 0;
+    }
+}
+@media screen and (max-height:740px ) {
+    hr{
+        margin: 7px;
+    }
+}
+@media screen and (max-height:700px ) {
+    html{
+        font-size: 0.875rem;
+    }
+    hr{
+        margin: 5px 0;
+    }
+    .confirm_number{
+        margin: 20px 0 ;
+    }   
+}
+@media screen and (max-width :1050px) {
+    html {
+      font-size: 0.875rem;
+    }
+}

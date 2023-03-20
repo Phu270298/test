@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background-color: #EAEAEA ;
+  font-family: 'Noto Sans JP', sans-serif ;
+  box-sizing: border-box;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+@for $i from 0 through 80 {
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+}
+
+@for $i from 10 through 400 {
+  .w-#{$i} {
+    width: #{$i}px;
+  }
+  .h-#{$i} {
+    height: #{$i}px;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

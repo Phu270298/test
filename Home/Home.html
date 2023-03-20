@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"
+        async>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="home_screen">
+        <!--header-->
+        <div class="header-container">
+            <div class="header-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="12.333 15.274 20 14">
+                    <path d="M12.333 29.274v-2h12.501v2h-12.5Zm0-6v-2h20v2h-20Zm0-6v-2h20v2h-20Z" fill="#fff"
+                        fill-rule="evenodd" data-name="Menu" />
+                </svg>
+            </div>
+            <div class="header">
+                <div class="brand-name">東京湾クルージング</div>
+                <div class="header-right">
+                    <div class="refresh-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18.3" height="15.466"
+                            viewBox="1007.692 14.767 18.3 15.466">
+                            <g data-name="refresh">
+                                <path
+                                    d="M1013.124 23.592a.45.45 0 0 0-.34-.746h-1.157a5.233 5.233 0 0 1 5.215-5.573c1.386 0 2.646.542 3.583 1.424l1.63-1.908a7.677 7.677 0 0 0-5.212-2.022 7.682 7.682 0 0 0-5.468 2.265 7.682 7.682 0 0 0-2.257 5.814h-.975a.45.45 0 0 0-.339.746l2.198 2.521.462.53 1.657-1.902 1.003-1.149Z"
+                                    fill="#fff" fill-rule="evenodd" data-name="パス 37" />
+                                <path
+                                    d="m1025.881 22.121-1.64-1.88-1.02-1.17-1.456 1.67-1.203 1.38a.45.45 0 0 0 .339.746h1.155a5.234 5.234 0 0 1-5.213 4.86 5.2 5.2 0 0 1-3.2-1.097l-1.631 1.909a7.674 7.674 0 0 0 4.83 1.694 7.682 7.682 0 0 0 5.468-2.265 7.677 7.677 0 0 0 2.257-5.1h.975a.45.45 0 0 0 .34-.747Z"
+                                    fill="#fff" fill-rule="evenodd" data-name="パス 38" />
+                            </g>
+                        </svg>
+                        更新
+                    </div>
+                    <div class="date">
+                        最終更新：2022/08/01 12:45
+                    </div>
+                    <div class="profile">
+                        <div class="profile-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13.043" height="15"
+                                viewBox="161.382 171.171 13.043 15">
+                                <g data-name="グループ 2">
+                                    <path
+                                        d="M171.527 174.72c0 1.96-1.622 3.549-3.623 3.549-2.002 0-3.623-1.589-3.623-3.549s1.621-3.549 3.623-3.549c2 0 3.623 1.589 3.623 3.549Z"
+                                        fill="#fff" fill-rule="evenodd" data-name="パス 3" />
+                                    <path
+                                        d="M173.081 181.373c-.74-.579-1.82-1.186-3.31-1.525h-3.734c-1.49.339-2.572.946-3.31 1.525a3.493 3.493 0 0 0-1.345 2.753v2.045h13.043v-2.045c0-1.07-.49-2.085-1.344-2.753Z"
+                                        fill="#fff" fill-rule="evenodd" data-name="パス 4" />
+                                </g>
+                            </svg>
+                        </div>
+                        <span>
+                            管理者
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="date_header">2022年08月01日（月）</h4>
+        <!--Reservation overview -->
+        <div class="reservation_overview">
+            <div class="reservation_overview_header">
+                <div class="reservation_overview_bar">
+                    <div class="bar"></div>
+                    <label>予約概要</label>
+                </div>
+                <label>[定員]換算表示中</label>
+            </div>
+            <div class="reservation_overview_content">
+                <div class="column_content1">
+                    <div class="column_content_day">
+                        <div class="today"> 本日</div>
+                        <div class="today_date">
+                            <div class="today_date_content">08/01</div>
+                            <div>（月）</div>
+                        </div>
+                    </div>
+                    <div class="people">
+                        <div class="people_min">100.5</div>
+                        <div class="rods">
+                            <div class="rod"></div>
+                        </div>
+                        <div class="people_max">132.0 人</div>
+                    </div>
+                    <div class="acceptance">
+                        <div class="one_acceptance">
+                            <div class="approved">受付済</div>
+                            <label>42.5 人</label>
+                        </div>
+                        <hr>
+                        <div class="one_acceptance">
+                            <div class="not_approved">受付未</div>
+                            <label>42.0 人</label>
+                        </div>
+                        <hr>
+                        <div class="one_acceptance">
+                            <div class="approved1">CXL</div>
+                            <label>14.5 人</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_content2">
+                    <div class="column_content_tomorrow">
+                        <div class="tomorrow"> 明日</div>
+                        <div class="tomorrow_date">
+                            <div class="today_date_content">08/02</div>
+                            <div>（火）</div>
+                        </div>
+                    </div>
+                    <div class="rest">運休</div>
+                </div>
+                <div class="column_content3">
+                    <div class="column_content_after_tomorrow">
+                        <div class="after_tomorrow"> 明後日</div>
+                        <div class="after_tomorrow_date">
+                            <div class="today_date_content">08/03</div>
+                            <div>（水）</div>
+                        </div>
+                    </div>
+                    <div class="people_after_tomorrow">
+                        <div class="people_min">86.5</div>
+                        <div class="rods">
+                            <div class="rod"></div>
+                        </div>
+                        <div class="people_max">132.0 人</div>
+                    </div>
+                    <div class="acceptance_after_tomorrow">
+                        <div class="one_acceptance">
+                            <div class="approved">受付済</div>
+                            <label>0.0 人</label>
+                        </div>
+                        <hr>
+                        <div class="one_acceptance">
+                            <div class="not_approved">受付未</div>
+                            <label>144.5 人</label>
+                        </div>
+                        <hr>
+                        <div class="one_acceptance">
+                            <div class="approved1">CXL</div>
+                            <label>0.0 人</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_left">
+                <!--Calendar-->
+                <div class="small_calendar">
+                   
+                </div>
+                <!--Scheduled search-->
+                <div class="scheduled_search">
+                    <div class="reservation_overview_bar">
+                        <div class="bar"></div>
+                        <label>予約検索</label>
+                    </div>
+                    <div class="scheduled_search_header">
+                        <img src="images/グループ 340.svg" alt="グループ">
+                        <div class="date_search">2022/08/01</div>
+                        <label>&#126;</label>
+                        <div class="date_search">2022/08/26</div>
+                    </div>
+                    <div class="btn_day">
+                        <button type="button" class="btn_today">今日 </button>
+                        <button type="button" class="btn_today">明日</button>
+                        <button type="button" class="btn_after_tomorrow"> クリア</button>
+                    </div>
+                    <div class="scheduled_search_input">
+                        <input type="text" placeholder="予約番号（一部可)">
+                        <input type="text" placeholder="予約時の電話番号">
+                        <input type="text" placeholder="ヤマダ　タロウ">
+                    </div>
+                    <div class="scheduled_search_checkbox">
+                        <div class="select_checkbox">
+                            <input id="table-checkall" type="checkbox" class="checkbox">
+                            <label for="table-checkall" class="span"></label>
+                            <label for="table-checkall" class="select_checkbox_content">予約</label>
+                        </div>
+                        <div class="select_checkbox">
+                            <input id="table-checkall" type="checkbox" class="checkbox">
+                            <label for="table-checkall" class="span"></label>
+                            <label for="table-checkall" class="select_checkbox_content">仮予約</label>
+                        </div>
+                        <div class="select_checkbox">
+                            <input id="table-checkall" type="checkbox" class="checkbox">
+                            <label for="table-checkall" class="span"></label>
+                            <label for="table-checkall" class="select_checkbox_content">CXL</label>
+                        </div>
+                    </div>
+                    <div class="scheduled_search_button">
+                        <button type="button" class="btn_confirm_1">条件クリア</button>
+                        <button type="button" class="btn_confirm_2">検索する</button>
+                    </div>
+                </div>
+            </div>
+            <!--Reservation calendar-->
+            <div class="content_right">
+                <div class="reservation_calendar_header">
+                    <div class="reservation_overview_bar">
+                        <div class="bar"></div>
+                        <label>予約カレンダー</label>
+                    </div>
+                    <div class="reservation_calendar_header_content">
+                        <button type="button"> 今週</button>
+                        <div class="list_day">
+                            <button class="btn_left"><img src="images/パス 10.svg" alt="パス"></button>
+                            <div>2022 08/01(月) ~ 08/07(日)</div>
+                            <button class="btn_right"><img src="images/パス 10 (1).svg" alt="パス"></button>
+                        </div>
+                        <div class="view_all_courses">
+                            <label>全コース表示 </label>
+                            <div class="btn-arrow">
+                                <button class="up_arrow"><img src="images/パス 36.svg"></button>
+                                <button class="down_arrow"><img src="images/パス 36.svg"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation_calendar_main">
+                    <table class="table_calendar">
+                        <tr>
+                            <th class="weekdays">月</th>
+                            <th class="weekdays">火</th>
+                            <th class="weekdays">水</th>
+                            <th class="weekdays">木</th>
+                            <th class="weekdays">金</th>
+                            <th class="saturday">土</th>
+                            <th class="sunday">日</th>
+                        </tr>
+                        <tr>
+                            <th class="weekdays">8月1日</th>
+                            <th class="weekdays">2日</th>
+                            <th class="weekdays">3日</th>
+                            <th class="weekdays">4日</th>
+                            <th class="weekdays">5日</th>
+                            <th class="weekdays">6日</th>
+                            <th class="weekdays">7日</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>11:00&#126;12:30</p>
+                                        <p> 神田川90</p>
+                                        <p>42.5/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note1">済</div>
+                                </div>
+                            </td>
+                            <td class="one_schedule_suspension"> 運休</td>
+                            <td>
+                                <div class="one_schedule_purple">
+                                    <div class="column_purple"></div>
+                                    <div class="one_schedule_content">
+                                        <p>11:00&#126;12:00</p>
+                                        <p> お江戸45(A)</p>
+                                        <p>42.5/44.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>11:00&#126;12:30</p>
+                                        <p> 神田川90</p>
+                                        <p>42.5/44.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>11:00&#126;12:30</p>
+                                        <p> 神田川90</p>
+                                        <p>42.5/44.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>11:00&#126;12:30</p>
+                                        <p> 神田川90</p>
+                                        <p>42.5/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note1">済</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>11:00&#126;12:30</p>
+                                        <p> 神田川90</p>
+                                        <p>42.5/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note1">済</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note2">中止</div>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>14:00&#126;15:00</p>
+                                        <p>東京湾70(晴海)</p>
+                                        <p>18.0/11.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note2">中止</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note2">中止</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:00</p>
+                                        <p> 神田川90</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note3">満</div>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="one_schedule_purple">
+                                    <div class="column_purple"></div>
+                                    <div class="one_schedule_content">
+                                        <p>15:30&#126;16:30</p>
+                                        <p>お江戸60(C)</p>
+                                        <p>18.5/26.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:00</p>
+                                        <p> 神田川90</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:00</p>
+                                        <p> 神田川90</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:00</p>
+                                        <p> 神田川90</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note3">満</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:00</p>
+                                        <p> 神田川90</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note3">満</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="one_schedule_yellow">
+                                    <div class="column_yellow"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:30</p>
+                                        <p>サンセット(浅草)</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>14:00&#126;15:00</p>
+                                        <p>東京湾70(晴海)</p>
+                                        <p>18.0/11.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_blue">
+                                    <div class="column_blue"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="one_schedule_green">
+                                    <div class="column_green"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_purple">
+                                    <div class="column_purple"></div>
+                                    <div class="one_schedule_content">
+                                        <p>15:30&#126;16:30</p>
+                                        <p>お江戸60(C)</p>
+                                        <p>18.5/26.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="one_schedule_red">
+                                    <div class="column_red"></div>
+                                    <div class="one_schedule_content">
+                                        <p>13:30&#126;15:00</p>
+                                        <p> 神田川90</p>
+                                        <p>44.0/44.0人</p>
+                                    </div>
+                                    <div class="one_schedule_note3">満</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="one_schedule_green">
+                                    <div class="column_green"></div>
+                                    <div class="one_schedule_content">
+                                        <p>12:00&#126;13:10</p>
+                                        <p> 東京湾70(晴海)</p>
+                                        <p>5.5/12.0人</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="white_part"></td>
+                            <td class="white_part"></td>
+                            <td class="white_part"></td>
+                            <td class="white_part"></td>
+                            <td class="white_part"></td>
+                            <td class="white_part"></td>
+                            <td class="white_part"></td>
+                        </tr>
+                    </table>
+                    <div class="reservation_calendar_footer">
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                        <div class="button_footer">
+                            <button class="btn_printing">印刷</button>
+                            <button class="btn_create"><img src="images/グループ 342.svg" alt="グループ"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

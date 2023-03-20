@@ -1,0 +1,100 @@
+body {
+  margin: 0 !important;
+  font-family: 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+html {
+  font-size: 1rem;
+}
+
+.header-container {
+  margin: 0 auto;
+  max-width: 1180px !important;
+  width: 1180px !important;
+  height: 45px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.header-logo {
+  box-sizing: border-box;
+  background: #004bb1;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-right: 1px solid #ffffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #3b4043;
+  height: 45px;
+  width: 100%;
+  padding: 15px 29px;
+  box-sizing: border-box;
+}
+
+.brand-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.date {
+  margin-left: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.refresh-btn {
+  width: 65px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #707f89;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.refresh-btn svg {
+  padding-right: 5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  padding-top: 1px;
+}
+
+.profile {
+  display: flex;
+  margin-left: 72px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.profile svg {
+  padding-right: 10px;
+}
+
+@media screen and (max-width :1000px) {
+  .header-container {
+    max-width: 1000px !important;
+    width: 1000px !important;
+    overflow: auto;
+  }
+}
